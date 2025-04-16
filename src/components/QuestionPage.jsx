@@ -44,7 +44,7 @@ const QuestionPage = ({ score, setScore, setMaxScore, setPage, playerName, playe
 
     return (
         <>
-            <PlayerInfo playerName={playerName} playerColor={playerColor} />
+            <PlayerInfo playerName={playerName} playerColor={playerColor} score={score} possiblePoints={submitted !== false ? qI+1 : qI} />
             <h1>{questions[qI].Question}</h1>
             { // Some questions include images. If they do, we create a space for them and populate it
                 questions[qI].Images ? (<>
@@ -82,7 +82,6 @@ const QuestionPage = ({ score, setScore, setMaxScore, setPage, playerName, playe
                         <button onClick={handleNext}>{ qI == questions.length - 1 ? "View Score" : "Next" }</button>
                     </>)
                 }
-                
             </form>
         </>
     );

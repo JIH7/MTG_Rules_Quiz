@@ -35,6 +35,11 @@
   align-self: center;
 }
 
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
 button, input[type="submit"] {
   box-sizing: border-box;
 
@@ -195,8 +200,9 @@ svg path {
 .player-info {
   position: fixed;
   left: 1rem;
+  bottom: 1rem;
 
-  & svg, & h2 {
-    display: inline;
+  & .mana-symbol {
+    margin: 0rem 1rem;
   }
 }

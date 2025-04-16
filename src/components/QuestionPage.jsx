@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import question_data from "../questions.json";
 
-const QuestionPage = ({ score, setScore, setMaxScore, setPage }) => {
+import PlayerInfo from "./PlayerInfo";
+
+const QuestionPage = ({ score, setScore, setMaxScore, setPage, playerName, playerColor }) => {
     const[questions, setQuestions] = useState(question_data.Questions);
     const [qI, setQI] = useState(0); // Index of current question
     const [submitted, setSubmitted] = useState(false);
@@ -42,6 +44,7 @@ const QuestionPage = ({ score, setScore, setMaxScore, setPage }) => {
 
     return (
         <>
+            <PlayerInfo playerName={playerName} playerColor={playerColor} />
             <h1>{questions[qI].Question}</h1>
             { // Some questions include images. If they do, we create a space for them and populate it
                 questions[qI].Images ? (<>

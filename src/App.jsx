@@ -12,6 +12,8 @@ const App = () => {
   const [page, setPage] = useState(0);
   const [score, setScore] = useState(0);
   const [maxScore, setMaxScore] = useState(0);
+  const [playerName, setPlayerName] = useState();
+  const [playerColor, setPlayerColor] = useState();
 
   // Swaps out root component based on page state variable
   const routePage = () => {
@@ -19,13 +21,20 @@ const App = () => {
       case 0: // Main Menu
         return (<HomePage startQuiz={startQuiz} />);
       case 1: // Quiz
-        return (<QuestionPage score={score} setScore={setScore} setMaxScore={setMaxScore} setPage={setPage}/>);
+        return (<QuestionPage 
+          score={score} 
+          setScore={setScore} 
+          setMaxScore={setMaxScore} 
+          setPage={setPage}
+          playerName={playerName}
+          playerColor={playerColor}
+          />);
       case 2: // Results page
         return (<ResultsPage score={score} maxScore={maxScore} setPage={setPage} />);
       case 3: // Scoreboard
         return (<HighScores />);
       case 4: // Name Entry
-        return (<NameEntry />);
+        return (<NameEntry setPlayerName={setPlayerName} setPlayerColor={setPlayerColor} setPage={setPage} />);
     }
   }
 

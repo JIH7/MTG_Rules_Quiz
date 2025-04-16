@@ -134,4 +134,69 @@ input[type="text"] {
 .color-select {
   display: flex;
   justify-content: space-around;
+
+  height: 3rem;
+}
+
+.mana-symbol {
+  background-color: white;
+
+  border-radius: 50%;
+  padding: .2rem;
+  height: 2rem;
+  width: 2rem;
+
+  outline: 2px solid #DE851800;
+
+  transition: all 100ms ease-in-out;
+
+
+  &.selectable:hover {
+    outline: 2px solid #DE851890;
+  }
+
+  &.selected {
+    outline: 2px solid #DE8518FF;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  &.color-w {
+    background-color: var(--white-background);
+  }
+
+  &.color-u {
+    background-color: var(--blue-background);
+  }
+
+  &.color-b {
+    background-color: var(--black-background);
+  }
+
+  &.color-r {
+    background-color: var(--red-background);
+  }
+
+  &.color-g {
+    background-color: var(--green-background);
+  }
+
+  & * {
+
+    height: 100%;
+    width: 100%;
+  }
+}
+
+svg path {
+  fill: black;
+}
+
+.player-info {
+  position: fixed;
+  left: 1rem;
+
+  & svg, & h2 {
+    display: inline;
+  }
 }

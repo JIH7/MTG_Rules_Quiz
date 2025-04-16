@@ -1,0 +1,127 @@
+{
+    "Questions" : [
+        {
+            "Question": "In what order does the stack resolve?",
+            "Answers": [
+                "First in, last out",
+                "First in, first out",
+                "In turn order, starting with the active player"
+            ],
+            "Explanations": [
+                "Correct!",
+                "Like a stack of pancakes, the last effect to go onto the stack is the first one to resolve.",
+                "The stack does not resolve in turn order. The most recent effect to be added resolves first."
+            ],
+            "Solution": 0
+        },
+        {
+            "Question": "If player A targets player B's Savanah Lions with Murder, and player B responds with Shardmage's Rescue:",
+            "Answers": [
+                "Murder resolves first and Savanah Lions dies. Shardmage's Rescue has no target and goes to the graveyard.",
+                "Shardmage's Rescue resolves first, but the creature was already targeted so it still dies.",
+                "Shardmage's Rescue resolves, Savanah Lions gains Hexproof and is no longer a valid target for murder.",
+                "Murder resolves first and Savanah Lions dies. Shardmage's Rescue enters that battlefield and remains without a target."
+            ],
+            "Explanations": [
+                "Shardmage's Rescue was played second, therefore it resolves first. Savanah Lions gets Hexproof and is not a valid target for murder.",
+                "Gaining Hexproof before Murder resolves still prevents the targeted effect.",
+                "Correct, gaining Hexproof before Murder resolves makes Savanah Lions an invalid target.",
+                "Shardmage's Rescue resolves first and gives Savanah Lions Hexproof, and auras cannot exist on the battlefield without a target."
+            ],
+            "Images": [
+                {
+                    "src": "https://cards.scryfall.io/large/front/9/c/9c9ac1bc-cdf3-4fa6-8319-a7ea164e9e47.jpg?1731652622",
+                    "alt": "Savannah Lions"
+                },
+                {
+                    "src": "https://cards.scryfall.io/large/front/2/c/2c249609-9cf7-46f1-b94c-9329add966bb.jpg?1726286259",
+                    "alt": "Murder"
+                },
+                {
+                    "src": "https://cards.scryfall.io/large/front/a/e/aed0cafa-d701-4e1f-9773-abcf817c244c.jpg?1726285964",
+                    "alt": "Shardmage's Rescue"
+                }
+            ],
+            "Solution": 2
+        },
+        {
+            "Question": "You target your opponent's Grizzly Bears with Control Magic. Can you attack with it immediately?",
+            "Images": [
+                {
+                    "src": "https://cards.scryfall.io/large/front/8/4/84992800-9bad-4598-afd4-f1e59d2e0956.jpg?1592672507",
+                    "alt": "Control Magic"
+                },
+                {
+                    "src": "https://cards.scryfall.io/large/front/4/0/409f9b88-f03e-40b6-9883-68c14c37c0de.jpg?1562546736",
+                    "alt": "Grizzly Bears"
+                }
+            ],
+            "Answers": [
+                "Yes",
+                "No"
+            ],
+            "Explanations": [
+                "Summoning sickness is applied whenever a player gains control of a permanent.",
+                "Correct! Summoning sickness is applied whenever a player gains control of a permanent."
+            ],
+            "Solution": 1
+        },
+        {
+            "Question": "You control Elesh Norn, Mother of Machines and your opponent controls a Torpor Orb. You cast a sunshower druid. When it enters:",
+            "Images": [
+                {
+                    "src": "https://cards.scryfall.io/normal/front/d/b/dbf02a38-d10d-463e-ab99-e7fd848a1bd3.jpg?1739804239",
+                    "alt": "Torpor Orb"
+                },
+                {
+                    "src": "https://cards.scryfall.io/normal/front/4/4/44dcab01-1d13-4dfc-ae2f-fbaa3dd35087.jpg?1722108717",
+                    "alt": "Elesh Norn, Mother of Machines"
+                },
+                {
+                    "src": "https://cards.scryfall.io/large/front/7/7/7740abc5-54e1-478d-966e-0fa64e727995.jpg?1721426936",
+                    "alt": "Sunshower Druid"
+                }
+            ],
+            "Answers": [
+                "Torpor Orb prevents the initial trigger of its ability, but Elesh Norn allows it to trigger once after.",
+                "It's ability does not trigger at all.",
+                "Elesh Norn takes precedence over Torpor orb, it's ability triggers twice."
+            ],
+            "Explanations": [
+                "Triggering an additional time does not get around Torpor Orb preventing the trigger.",
+                "Correct! Torpor Orb prevents all enters the battlefield triggers.",
+                "'Can't' always takes precedence over 'can.'"
+            ],
+            "Solution": 1
+        },
+        {
+            "Question": "You cast Stab on Toski, Bearer of Secrets. Is it destroyed?",
+            "Images": [
+                {
+                    "src":"https://cards.scryfall.io/large/front/6/8/6859a5ba-1c1c-4631-bba8-f9900b827178.jpg?1730488851",
+                    "alt":"Stab"
+                },
+                {
+                    "src": "https://cards.scryfall.io/large/front/0/1/0153d1ad-c8ee-42ff-a059-b763c2cfb7be.jpg?1721433799",
+                    "alt": "Toski, Bearer of Secrets"
+                }
+            ],
+            "Answers": [
+                "Yes",
+                "No"
+            ],
+            "Explanations": [
+                "Correct! Indestructible prevents creatures from dying due to damage or effects that say 'destroy.' A creature with indestructible still dies from having 0 toughness.",
+                "Indestructible prevents creatures from dying due to damage or effects that say 'destroy.' A creature with indestructible still dies from having 0 toughness."
+            ],
+            "Solution": 0
+        },
+        {
+            "Question": "",
+            "Answers": [
+                "test"
+            ],
+            "Solution": 0
+        }
+    ]
+}

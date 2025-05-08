@@ -17,10 +17,7 @@ const QuestionPage = ({ score, setScore, setMaxScore, setPage, playerName, playe
         const selected = parseInt(e.target.elements.answer.value); // Selected answer
 
         if (selected == questions[qI].Solution) {
-            console.log("Correct");
             setScore(score + 1); // Update score state variable
-        } else {
-            console.log("Incorrect");
         }
         // Deselect radio buttons when next question renders
         document.querySelectorAll(".radio").forEach(el => el.checked = false);

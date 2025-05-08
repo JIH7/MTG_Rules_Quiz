@@ -115,13 +115,6 @@
                 "Indestructible prevents creatures from dying due to damage or effects that say 'destroy.' A creature with indestructible still dies from having 0 toughness."
             ],
             "Solution": 0
-        },
-        {
-            "Question": "",
-            "Answers": [
-                "test"
-            ],
-            "Solution": 0
         }
     ]
 }

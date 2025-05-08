@@ -206,3 +206,16 @@ svg path {
     margin: 0rem 1rem;
   }
 }
+
+table {
+  width: 80%;
+  margin-top: 4rem;
+}
+
+td:has(> .mana-symbol) {
+  
+}
+
+td > .mana-symbol {
+  margin: auto;
+}

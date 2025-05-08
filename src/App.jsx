@@ -7,7 +7,6 @@ import QuestionPage from './components/QuestionPage';
 import ResultsPage from './components/ResultsPage';
 import HighScores from './components/HighScores';
 import NameEntry from './components/NameEntry';
-import { use } from 'react';
 
 const App = () => {
   const [page, setPage] = useState(0);
@@ -19,10 +18,10 @@ const App = () => {
 
   useEffect(() => { // Retrieve high scores when app is loaded
     console.log("Scores checked")
-    if (localStorage.getItem("highScores" !== null)) {
+    if (localStorage.getItem("highScores") !== null) {
       const storedData = localStorage.getItem("highScores");
       const parsedData = JSON.parse(storedData);
-      setHighScores(parsedData.scores);
+      setHighScores(parsedData);
       console.log("Scores loaded")
     } else { console.log("No scores found.") }
   }, []);
@@ -31,13 +30,13 @@ const App = () => {
     const storedScores = localStorage.getItem("highScores")
 
     if (storedScores === null && highScores) {
-      const highScoresJSON = JSON.stringify({ scores : highScores });
+      const highScoresJSON = JSON.stringify(highScores);
       localStorage.setItem("highScores", highScoresJSON);
     } else {
-      const parsedScores = JSON.parse(storedScores).scores;
+      const parsedScores = JSON.parse(storedScores);
 
       if (parsedScores != highScores) {
-        const packedScores = JSON.stringify({ scores : highScores });
+        const packedScores = JSON.stringify(highScores);
       }
     }
     console.log(highScores);
@@ -48,14 +47,14 @@ const App = () => {
     const scoreObject = {
       playerName : playerName,
       score : score,
-      maxScore : maxScore
+      maxScore : maxScore,
+      color: playerColor
     };
-    console.log(scoreObject);
-    let highScoresTemp = highScores;
-    highScoresTemp.push(scoreObject);
 
-//    highScoresTemp.sort((a, b) => (a.score / a.maxScore) - (b.score / b.maxScore))
-    setHighScores(highScoresTemp);
+    const updatedHighScores = [...highScores, scoreObject];
+    updatedHighScores.sort((a, b) => (b.score / b.maxScore) - (a.score / a.maxScore))
+    setHighScores(updatedHighScores);
+    localStorage.setItem('highScores', JSON.stringify(updatedHighScores));
   }
 
   // Swaps out root component based on page state variable
@@ -64,6 +63,7 @@ const App = () => {
       case 0: // Main Menu
         return (<HomePage
           startQuiz={startQuiz}
+          highScores={toHighScores}
           />);
       case 1: // Quiz
         return (<QuestionPage 
@@ -83,7 +83,9 @@ const App = () => {
           updateHighScores={updateHighScores}
           />);
       case 3: // Scoreboard
-        return (<HighScores />);
+        return (<HighScores
+          highScores={highScores}
+          toHomePage={toHomePage} />);
       case 4: // Name Entry
         return (<NameEntry
           setPlayerName={setPlayerName}
@@ -93,10 +95,18 @@ const App = () => {
     }
   }
 
+  const toHomePage = () => {
+    setPage(0);
+  }
+
   const startQuiz = () => {
     setScore(0);
     setMaxScore(0);
     setPage(4);
+  }
+
+  const toHighScores = () => {
+    setPage(3);
   }
 
   return (

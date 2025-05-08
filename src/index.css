@@ -208,14 +208,27 @@ svg path {
 }
 
 table {
-  width: 80%;
+  width: 60%;
   margin-top: 4rem;
+  table-layout: fixed;
 }
 
-td:has(> .mana-symbol) {
-  
+table + button {
+  margin-top: 3rem;
+}
+
+th {
+  padding-bottom: 2rem;
+}
+
+td {
+  padding-bottom: 1.2rem;
 }
 
 td > .mana-symbol {
   margin: auto;
+}
+
+.home-header ~ button {
+  margin-top: 1.2rem;
 }
